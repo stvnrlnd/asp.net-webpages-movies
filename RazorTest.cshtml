@@ -44,6 +44,9 @@
     <body>
         <h1>Testing Razor Syntax</h1>
         <div>
+            @Gravatar.GetHtml("stvnrlnd@gmail.com")
+        </div>
+        <div>
             <p>The value of <em>a</em> is @a.  The value of <em>b</em> is @b.
             <p>The sum of <em>a</em> and <em>b</em> is <strong>@theSum</strong>.</p>
             <p>The product of <em>a</em> and <em>b</em> is <strong>@(a*b)</strong>.</p>
