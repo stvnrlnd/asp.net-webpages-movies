@@ -1,15 +1,21 @@
 ﻿@{
     // Working with numbers
-   var a = 4;
-   var b = 5;
-   var theSum = a + b;
+    var a = 4;
+    var b = 5;
+    var theSum = a + b;
 
-   // Working with characters (strings)
-   var technology = "ASP.NET";
-   var product ="Web Pages";
+    // Working with characters (strings)
+    var technology = "ASP.NET";
+    var product ="Web Pages";
 
-   // Working with objects
-   var rightNow = DateTime.Now;
+    // Working with objects
+    var rightNow = DateTime.Now;
+
+    // Working with conditional statements
+    var message = "This is the first time you've requested the page.";
+    if(IsPost) {
+        message = "Now you've submitted the page.";
+    }
 }
 
 <!DOCTYPE html>
@@ -50,5 +56,14 @@
             <p>The current date and time is: @rightNow</p>
             <p>The URL of the current page is<br/><br/><code>@Request.Url</code></p>
         </div>
+        <form method="post">
+            <div>
+                <p>@message</p>
+                <p><input type="submit" value="Submit" /></p>
+                @if(IsPost){
+                  <p>You submitted the page at @DateTime.Now</p>
+                }
+            </div>
+        </form>
     </body>
 </html>
